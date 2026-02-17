@@ -1,7 +1,7 @@
 1) What is the difference between null and undefined?
 
-undefined: This is a type that indicates a variable has been declared but has not yet been assigned a value.
-null: This is an assignment value that represents the intentional absence of any object value.
+# undefined: This is a type that indicates a variable has been declared but has not yet been assigned a value.
+# null: This is an assignment value that represents the intentional absence of any object value.
 
 2) What is the use of the map() function in JavaScript? How is it different from forEach()?
 
