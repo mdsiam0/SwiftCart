@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCart | Best Collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <header class="sticky top-0 z-50 bg-base-100 shadow-md">
+        <nav class="navbar container mx-auto">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-medium">
+                        <li><a onclick="showPage('home')">Home</a></li>
+                        <li><a onclick="showPage('products')">Products</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <a onclick="showPage('home')" class="text-2xl font-bold text-primary ml-2 lg:ml-0 cursor-pointer">SwiftCart</a>
+            </div>
+
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 font-medium">
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('products')">Products</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-end">
+                <button class="btn btn-ghost btn-circle">
+                    <div class="indicator">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span class="badge badge-sm indicator-item">0</span>
+                    </div>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="home-page">
+            <section class="hero min-h-[60vh]" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1500'); background-size: cover;">
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div class="hero-content justify-start w-full text-neutral-content px-10">
+                    <div class="text-left">
+                        <h1 class="mb-8 text-6xl font-bold">Best Collection For You</h1>
+                        <p class="mb-8 text-lg">Discover the latest trends in fashion, electronics, and jewelry.</p>
+                        <button onclick="showPage('products')" class="btn btn-primary px-8">Shop Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container mx-auto py-12 px-4">
+                <h2 class="text-3xl font-bold text-center mb-10">Why Choose Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-base-200 rounded-xl">
+                        <i class="fa-solid fa-truck-fast text-4xl text-primary mb-4"></i>
+                        <h3 class="font-bold text-xl">Fast Delivery</h3>
+                        <p class="text-gray-600">Delivered within 24 hours.</p>
+                    </div>
+                    <div class="text-center p-6 bg-base-200 rounded-xl">
+                        <i class="fa-solid fa-headset text-4xl text-primary mb-4"></i>
+                        <h3 class="font-bold text-xl">24/7 Support</h3>
+                        <p class="text-gray-600">We are always here to help.</p>
+                    </div>
+                    <div class="text-center p-6 bg-base-200 rounded-xl">
+                        <i class="fa-solid fa-shield-halved text-4xl text-primary mb-4"></i>
+                        <h3 class="font-bold text-xl">Secure Payment</h3>
+                        <p class="text-gray-600">Your transactions are safe.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-base-100 py-12 px-4">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-5">Trending Now</h2>
+                    <p class="text-center mb-10 text-gray-600">Our most loved products picked just for you.</p>
+                    <div id="trending-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="products-page" class="hidden container mx-auto px-4 py-12">
+            <h2 class="text-4xl font-bold text-center mb-10">Explore Our Shop</h2>
+            <div id="category-container" class="flex flex-wrap justify-center gap-4 mb-12">
+                </div>
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                </div>
+        </div>
+
+        
+    </main>
+
+    
+    <input type="checkbox" id="details-modal" class="modal-toggle" />
+    <div class="modal" role="dialog">
+        <div class="modal-box w-11/12 max-w-2xl">
+            <div id="modal-content" class="flex flex-col md:flex-row gap-6"></div>
+            <div class="modal-action">
+                <label for="details-modal" class="btn">Close</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
