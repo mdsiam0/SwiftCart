@@ -1,17 +1,16 @@
-// Selectors
+
 const productGrid = document.getElementById('product-grid');
 const trendingGrid = document.getElementById('trending-grid');
 const categoryContainer = document.getElementById('category-container');
 const modalContent = document.getElementById('modal-content');
 
-// 1. Navigation Controller
+
 const showPage = (pageId) => {
     document.getElementById('home-page').classList.toggle('hidden', pageId === 'products');
     document.getElementById('products-page').classList.toggle('hidden', pageId === 'home');
     window.scrollTo(0, 0);
 };
 
-// 2. Load Categories
 const loadCategories = async () => {
     try {
         const res = await fetch('https://fakestoreapi.com/products/categories');
@@ -33,7 +32,7 @@ const renderCategoryBtn = (name, url, active) => {
     categoryContainer.appendChild(btn);
 };
 
-// 3. Fetch Products
+
 const fetchProducts = async (url, container) => {
     container.innerHTML = `<div class="col-span-full text-center py-20"><span class="loading loading-spinner loading-lg"></span></div>`;
     try {
@@ -43,7 +42,7 @@ const fetchProducts = async (url, container) => {
     } catch (err) { container.innerHTML = "Error loading products."; }
 };
 
-// 4. Card Template
+
 const displayCards = (products, container) => {
     container.innerHTML = "";
     products.forEach(p => {
@@ -71,7 +70,7 @@ const displayCards = (products, container) => {
     });
 };
 
-// 5. Modal Loader
+
 const loadDetails = async (id) => {
     modalContent.innerHTML = `<div class="flex justify-center items-center w-full h-64"><span class="loading loading-dots loading-lg"></span></div>`;
     try {
@@ -99,11 +98,11 @@ const loadDetails = async (id) => {
     } catch (err) { modalContent.innerHTML = "Failed to load product details."; }
 };
 
-// Init
+
 document.addEventListener('DOMContentLoaded', () => {
     loadCategories();
     fetchProducts('https://fakestoreapi.com/products', productGrid);
-    // Load top 3 for trending
+   
     fetch('https://fakestoreapi.com/products').then(r => r.json()).then(data => {
         const top = data.sort((a,b) => b.rating.rate - a.rating.rate).slice(0,3);
         displayCards(top, trendingGrid);

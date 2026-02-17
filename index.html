@@ -52,7 +52,7 @@
 
     <main>
         <div id="home-page">
-            <section class="hero min-h-[60vh]" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1500'); background-size: cover;">
+            <section class="hero min-h-[60vh]" style="background-image: url('./assets/banner-image.png'); background-size: cover;">
                 <div class="hero-overlay bg-opacity-60"></div>
                 <div class="hero-content justify-start w-full text-neutral-content px-10">
                     <div class="text-left">
@@ -63,8 +63,9 @@
                 </div>
             </section>
 
-            <section class="container mx-auto py-12 px-4">
-                <h2 class="text-3xl font-bold text-center mb-10">Why Choose Us</h2>
+            <section class="container mx-auto mt-20 py-12 px-4">
+                <h2 class="text-3xl font-bold text-center mb-2">Why Choose Us</h2>
+                <p class=" text-center mb-12">We provide the best shopping experience with top-notch services.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center p-6 bg-base-200 rounded-xl">
                         <i class="fa-solid fa-truck-fast text-4xl text-primary mb-4"></i>
@@ -84,7 +85,7 @@
                 </div>
             </section>
 
-            <section class="bg-base-100 py-12 px-4">
+            <section class="bg-base-100 mt-20 py-12 px-4">
                 <div class="container mx-auto">
                     <h2 class="text-3xl font-bold text-center mb-5">Trending Now</h2>
                     <p class="text-center mb-10 text-gray-600">Our most loved products picked just for you.</p>
@@ -104,6 +105,60 @@
 
         
     </main>
+
+
+    <footer class="bg-[#1a2332] mt-20 text-slate-300 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-10">
+            <div>
+                <h2 class="text-2xl font-bold text-[#574cf2] mb-4">SwiftCart</h2>
+                <p class="text-sm leading-relaxed opacity-80">
+                    Your one-stop shop for all your fashion and lifestyle needs. Quality products, fast delivery, and excellent support.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-white font-bold mb-4 tracking-wider text-xs uppercase">Quick Links</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a onclick="showPage('home')" class="hover:text-white cursor-pointer transition-colors">Home</a></li>
+                    <li><a onclick="showPage('products')" class="hover:text-white cursor-pointer transition-colors">Products</a></li>
+                    <li><a class="hover:text-white cursor-pointer transition-colors">About</a></li>
+                    <li><a class="hover:text-white cursor-pointer transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-bold mb-4 tracking-wider text-xs uppercase">Support</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a class="hover:text-white cursor-pointer transition-colors">FAQ</a></li>
+                    <li><a class="hover:text-white cursor-pointer transition-colors">Shipping</a></li>
+                    <li><a class="hover:text-white cursor-pointer transition-colors">Returns</a></li>
+                    <li><a class="hover:text-white cursor-pointer transition-colors">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-bold mb-4 tracking-wider text-xs uppercase">Subscribe to our newsletter</h3>
+                <p class="text-sm mb-4 opacity-80">The latest news, articles, and resources, sent to your inbox weekly.</p>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="Enter your email" class="input input-bordered bg-white text-black w-full" />
+                    <button class="btn bg-[#574cf2] hover:bg-[#463cc7] border-none text-white px-8">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm opacity-60">© 2026 SwiftCart, Inc. All rights reserved.</p>
+            <div class="flex gap-6 text-xl opacity-70">
+                <a class="hover:text-white transition-colors cursor-pointer"><i class="fa-brands fa-facebook"></i></a>
+                <a class="hover:text-white transition-colors cursor-pointer"><i class="fa-brands fa-twitter"></i></a>
+                <a class="hover:text-white transition-colors cursor-pointer"><i class="fa-brands fa-instagram"></i></a>
+                <a class="hover:text-white transition-colors cursor-pointer"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="hover:text-white transition-colors cursor-pointer"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     
     <input type="checkbox" id="details-modal" class="modal-toggle" />
